@@ -796,12 +796,14 @@ vulkan_enum! {
         RequiresAllOf([DeviceExtension(ext_extended_dynamic_state3)]),
     ]), */
 
-    /* TODO: enable
-    // TODO: document
+    /// Allows the application to use the OpenGL depth range in NDC, i.e. with depth in range [-1, 1], as opposed to Vulkan’s default of [0, 1].
+    ///
+    ///- [Vulkan documentation](https://registry.khronos.org/vulkan/specs/latest/man/html/VK_EXT_depth_clip_control.html)
     DepthClipNegativeOneToOne = DEPTH_CLIP_NEGATIVE_ONE_TO_ONE_EXT
     RequiresOneOf([
-        RequiresAllOf([DeviceExtension(ext_extended_dynamic_state3)]),
-    ]), */
+        RequiresAllOf([APIVersion(V1_1)]),
+        RequiresAllOf([InstanceExtension(khr_get_physical_device_properties2)]),
+    ]),
 
     /* TODO: enable
     // TODO: document
